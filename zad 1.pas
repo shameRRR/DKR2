@@ -1,39 +1,20 @@
-﻿const   n=20;
-
-var
-  a: array[1..n] of integer;
-
-var
-  b: integer;
-
-var
-  max_raz: integer;
-
-var
-  c: integer;
-
-var
-  j: integer;
-
-var
-  k1: integer;
-
-var
-  k2: integer;
-
-
-  max: integer;
-
+const   n=20;
 begin
-  for b := 1 to n do
+
+var a: array[1..n] of integer;
+var max_raz: integer;
+var k1: integer;
+var k2: integer;
+var max: integer;
+  for var b := 1 to n do
   begin
     a[b] := random(160) - 99;
     write(a[b],' ');
   end;
   begin
     max := abs(a[1] - a[2]);
-    for c := 1 to n - 1 do
-      for j := c + 1 to n do
+    for var c := 1 to n - 1 do
+      for var j := c + 1 to n do
       begin
         max_raz := abs(a[c] - a[j]);
         if max_raz > max then 
@@ -44,6 +25,5 @@ begin
         end;
       end;
   end;
-  writeln;
-  writeln(k1,' ', k2)
+  write(k1,' ', k2)
 end.
